@@ -1,4 +1,4 @@
-name: QA-MLLM
+name: qa-mllm
 channels:
   - pytorch
   - huggingface
@@ -112,5 +112,6 @@ dependencies:
       - accelerate==0.20.3
       - diffusers==0.17.1
       - fsspec==2023.6.0
+      - tika==2.6.0
       - torchaudio==2.0.2
       - torchvision==0.15.2
