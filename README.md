@@ -39,6 +39,10 @@ conda activate qa-mlm
 - [ ] Allow to use other languages as context input
 - [ ] Create CLI application
 - [ ] Create GUI application
+- [ ] Allow to specify the model to use
+- [ ] Allow hot swapping of models
+- [ ] Allow hot swapping of tokenizer
+- [ ] Allow hot swapping of context input
 
 ## License
 
