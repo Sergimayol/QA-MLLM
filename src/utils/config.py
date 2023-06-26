@@ -10,7 +10,13 @@ It includes:
 DEBUG = True
 
 # ML models configuration
-MODELS = {}
+MODELS = {
+    "qa": {
+        "model_name": "deepset/roberta-base-squad2",
+        "tokenizer_name": "deepset/roberta-base-squad2",
+        "pipeline_name": "question-answering",
+    }
+}
 
 # Database configuration
 DB_CONFIG = {}
