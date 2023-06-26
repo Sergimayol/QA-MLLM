@@ -1,3 +1,6 @@
+"""This file contains the common code for the models, basically is the 
+core of the models used in this application.
+"""
 import logging
 from transformers import pipeline
 
@@ -5,7 +8,7 @@ LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 
-class QAModel:
+class Model:
     def __init__(
         self,
         context: str,
@@ -35,12 +38,6 @@ class QAModel:
             LOGGER.error("Error loading model.")
             LOGGER.error(e)
 
-    def answer_question(self, question: str) -> any:
-        LOGGER.info(f"Answering question: {question}")
-        if self.model is None:
-            self.load_model()
-        return self.model(question=question, context=self.context)
-
     def __str__(self) -> str:
         MAX = 25
         print_context = (
@@ -49,7 +46,7 @@ class QAModel:
             else self.context
         )
         return (
-            f"QAModel(context={print_context}, device={self.device}, "
+            f"Model(context={print_context}, device={self.device}, "
             f"model_name={self.model_name}, tokenizer_name={self.tokenizer_name}, "
             f"pipeline_name={self.pipeline_name})"
         )
