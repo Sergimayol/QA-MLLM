@@ -24,6 +24,12 @@ MODELS = {
     },
 }
 
+# Max length of the qa input
+MAX_INPUT_LENGTH = 10000
+
+# Event loop exit key
+EXIT_KEY = "q"
+
 # Database configuration
 DB_CONFIG = {}
 

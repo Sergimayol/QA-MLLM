@@ -1,5 +1,9 @@
 """
 """
+import logging
+
+LOGGER = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 
 class Parser:
@@ -9,7 +13,7 @@ class Parser:
             raise Exception("Invalid document, file is not specified")
         self.extension = extension
 
-    def parse(self) -> str:
+    def parse(self) -> str or None:
         if self.extension == "txt":
             return self.__parse_txt()
         elif self.extension == "md":
@@ -28,7 +32,7 @@ class Parser:
             with open(self.document, "rb") as f:
                 content = f.read().decode("utf-8")
         except Exception as e:
-            print(e)
+            LOGGER.error(f"Error while parsing txt document: {e}")
 
         return content
 
