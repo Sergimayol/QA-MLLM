@@ -116,3 +116,4 @@ dependencies:
       - torchaudio==2.0.2
       - torchvision==0.15.2
       - streamlit==1.23.1
+      - argparse==1.4.0
