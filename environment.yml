@@ -115,3 +115,4 @@ dependencies:
       - tika==2.6.0
       - torchaudio==2.0.2
       - torchvision==0.15.2
+      - streamlit==1.23.1
