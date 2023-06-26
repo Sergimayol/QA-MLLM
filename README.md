@@ -1,16 +1,22 @@
-# QA-MLLM
+<div align="center">
+
+<img src="./docs/assets/qa-mllm.png" height="482" width="1447">
+
+# QA-MLLM (Question Answering - Multiple Large Language Models)
+
+</div>
 
 ## Introduction
 
-TODO
+This project is a question answering system based on huggingface transformers. It is a combination of a multiple large language models (MLLM) in cascade in order to be able to answer quuestion from any language and from any input type, such as pdf, html, docx, images, videos, audio, etc.
 
 ## Installation
 
-TODO
+Work in progress ...
 
 ## Usage
 
-TODO
+Work in progress ...
 
 ## Development
 
@@ -31,6 +37,8 @@ conda activate qa-mlm
 - [ ] Allow to use videos as context input
 - [ ] Allow to use audio as context input
 - [ ] Allow to use other languages as context input
+- [ ] Create CLI application
+- [ ] Create GUI application
 
 ## License
 
