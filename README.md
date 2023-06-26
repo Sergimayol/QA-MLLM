@@ -37,7 +37,7 @@ conda activate qa-mlm
 - [ ] Allow to use videos as context input
 - [ ] Allow to use audio as context input
 - [ ] Allow to use other languages as context input
-- [ ] Create CLI application
+- [x] Create CLI application
 - [ ] Create GUI application
 - [ ] Allow to specify the model to use
 - [ ] Allow hot swapping of models
