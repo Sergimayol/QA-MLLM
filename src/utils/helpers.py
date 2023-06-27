@@ -31,13 +31,6 @@ class Helpers:
             help="Path to the input file (text file, pdf, docx, images, etc.)",
         )
         parser.add_argument(
-            "--output",
-            "-o",
-            type=str,
-            required=False,
-            help="Path to the output video file",
-        )
-        parser.add_argument(
             "--model",
             "-m",
             type=str,
@@ -51,6 +44,13 @@ class Helpers:
             required=False,
             help="Device to use (cpu or cuda), default will be cuda if available",
         )
+        parser.add_argument(
+            "--record",
+            "-r",
+            type=str,
+            required=False,
+            help="This enables the recording of the user's input and the AI's response in a sqlite database",
+        )
 
         args = parser.parse_args()
-        return args.input, args.output, args.model, args.device
+        return args.input, args.model, args.device, args.record

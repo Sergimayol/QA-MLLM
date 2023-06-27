@@ -3,13 +3,13 @@ Answering Multi Language Learning Model) application.
 """
 from preprocessor.input_analysis import InputAnalyzer
 from utils.helpers import Helpers
-from utils.config import MODELS, EXIT_KEY
+from utils.config import MODELS, EXIT_KEY, MAX_INPUT_LENGTH
 from models import model as AIModel
 
 
-def load_models(input_analyzer: str, device: str) -> dict:
+def load_models(device: str) -> dict[str, any]:
     qa_model = AIModel.QAModel(
-        context=input_analyzer,
+        context=None,
         device=device,
         model_name=MODELS["qa"]["model_name"],
         tokenizer_name=MODELS["qa"]["tokenizer_name"],
@@ -17,7 +17,7 @@ def load_models(input_analyzer: str, device: str) -> dict:
     )
 
     summarization_model = AIModel.SummarizationModel(
-        context=input_analyzer,
+        context=None,
         device=device,
         model_name=MODELS["summarization"]["model_name"],
         tokenizer_name=MODELS["summarization"]["tokenizer_name"],
@@ -28,11 +28,21 @@ def load_models(input_analyzer: str, device: str) -> dict:
     return {"qa": qa_model, "summarization": summarization_model}
 
 
+def get_context(analyzed_input: str, model: AIModel.SummarizationModel) -> str:
+    # If the input is too long, summarize it
+    if len(analyzed_input) > MAX_INPUT_LENGTH:
+        model.context = analyzed_input
+        summarized_input = model.summarize(MAX_INPUT_LENGTH)
+        return summarized_input
+
+    return analyzed_input
+
+
 def main():
-    in_path, out_path, model_path, device = Helpers.get_app_args()
+    in_path, model_path, device, record = Helpers.get_app_args()
     confirmed_device = Helpers.get_device(device)
-    input_analyzer = InputAnalyzer(in_path).analyze()
-    if not input_analyzer:
+    analyzed_input = InputAnalyzer(in_path).analyze()
+    if not analyzed_input:
         print(
             "Invalid input file, make sure it's a valid file and try again."
             f"\n Valid files are: {Helpers.ALLOWED_EXTENSIONS}"
@@ -40,9 +50,13 @@ def main():
         return
 
     # Load the models
-    models = load_models(input_analyzer, confirmed_device)
-    qa_model = models["qa"]
-    summarization_model = models["summarization"]
+    models = load_models(confirmed_device)
+
+    # Get the context for the QA model
+    context = get_context(analyzed_input, models["summarization"])
+
+    qa_model: AIModel.QAModel = models["qa"]
+    qa_model.context = context
 
     print(f"Type {EXIT_KEY} to quit the application.")
     # Main loop event
