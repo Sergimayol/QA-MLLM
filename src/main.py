@@ -6,7 +6,7 @@ from models import model as AIModel
 from utils.config import MODELS, DEBUG
 from utils.helpers import Helpers
 
-FILE_PATH = "../file.test.txt"
+FILE_PATH = "../file.test.pdf"
 
 
 def main():
@@ -15,9 +15,9 @@ def main():
         in_path = FILE_PATH
 
     input_analyzer = InputAnalyzer(in_path)
+    print(input_analyzer.analyze())
+    return
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # print(input_analyzer.analyze())
-
     model = AIModel.QAModel(
         context=input_analyzer.analyze(),
         device=device,
