@@ -16,7 +16,22 @@ Work in progress ...
 
 ## Usage
 
-Work in progress ...
+To use the application, you have two options:
+
+1. Use the CLI application
+2. Use the GUI application
+
+### CLI application
+
+```bash
+qa-mlm --help
+```
+
+### GUI application
+
+```bash
+qa-mlm-gui --help
+```
 
 ## Development
 
@@ -30,9 +45,10 @@ conda activate qa-mlm
 
 ## In progress
 
-- [ ] Allow to use pdf as context input
-- [ ] Allow to use html as context input
-- [ ] Allow to use docx as context input
+- [ ] Allow to use `.md` as context input
+- [ ] Allow to use `.pdf` as context input
+- [ ] Allow to use `.html` as context input
+- [ ] Allow to use `.docx` as context input
 - [ ] Allow to use images as context input
 - [ ] Allow to use videos as context input
 - [ ] Allow to use audio as context input
@@ -43,6 +59,7 @@ conda activate qa-mlm
 - [ ] Allow hot swapping of models
 - [ ] Allow hot swapping of tokenizer
 - [ ] Allow hot swapping of context input
+- [ ] Allow to record the conversation
 
 ## License
 
