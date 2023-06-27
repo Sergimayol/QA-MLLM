@@ -35,13 +35,13 @@ qa-mlm-gui --help
 
 ## Development
 
-````bash
+```bash
 conda env create -f environment.yml
-``x
+```
 
 ```bash
 conda activate qa-mlm
-````
+```
 
 ## In progress
 
