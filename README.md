@@ -35,18 +35,18 @@ qa-mlm-gui --help
 
 ## Development
 
-```bash
+````bash
 conda env create -f environment.yml
-```
+``x
 
 ```bash
 conda activate qa-mlm
-```
+````
 
 ## In progress
 
-- [ ] Allow to use `.md` as context input
-- [ ] Allow to use `.pdf` as context input
+- [x] Allow to use `.md` as context input
+- [x] Allow to use `.pdf` as context input
 - [ ] Allow to use `.html` as context input
 - [ ] Allow to use `.docx` as context input
 - [ ] Allow to use images as context input
