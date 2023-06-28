@@ -31,7 +31,9 @@ MAX_INPUT_LENGTH = 10000
 EXIT_KEY = "q"
 
 # Database configuration
-DB_CONFIG = {}
+DB_CONFIG = {
+    "db_name": "memo.sqlite",
+}
 
 # Allowed file extensions for input files
 ALLOWED_EXTENSIONS = set(["txt", "pdf", "html", "md"])
