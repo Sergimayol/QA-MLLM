@@ -3,7 +3,7 @@ Answering Multi Language Learning Model) application.
 """
 from preprocessor.input_analysis import InputAnalyzer
 from utils.helpers import Helpers
-from utils.config import MODELS, EXIT_KEY, MAX_INPUT_LENGTH
+from utils.config import MODELS, EXIT_KEY, MAX_INPUT_LENGTH, ALLOWED_EXTENSIONS
 from models import model as AIModel
 
 
@@ -45,7 +45,7 @@ def main():
     if not analyzed_input:
         print(
             "Invalid input file, make sure it's a valid file and try again."
-            f"\n Valid files are: {Helpers.ALLOWED_EXTENSIONS}"
+            f"\n Valid files are: {ALLOWED_EXTENSIONS}"
         )
         return
 
