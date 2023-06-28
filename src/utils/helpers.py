@@ -21,6 +21,16 @@ class Helpers:
         return device
 
     @staticmethod
+    def get_path_to_save_upload(filename: str) -> str:
+        import os
+
+        path = os.path.join(os.getcwd(), "uploads")
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+        return f"{path}/{filename}"
+
+    @staticmethod
     def get_app_args() -> tuple:
         parser = argparse.ArgumentParser()
         parser.add_argument(
