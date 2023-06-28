@@ -54,7 +54,7 @@ conda activate qa-mlm
 - [ ] Allow to use audio as context input
 - [ ] Allow to use other languages as context input
 - [x] Create CLI application
-- [ ] Create GUI application
+- [x] Create GUI application
 - [ ] Allow to specify the model to use
 - [ ] Allow hot swapping of models
 - [ ] Allow hot swapping of tokenizer
