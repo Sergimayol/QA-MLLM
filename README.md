@@ -8,7 +8,7 @@
 
 ## Introduction
 
-This project is a question answering system based on huggingface transformers. It is a combination of a multiple large language models (MLLM) in cascade in order to be able to answer question from any language and from any input type, such as pdf, html, docx, images, videos, audio, etc.
+This project is a question answering system based on huggingface models. It is a combination of a multiple large language models (MLLM) in cascade in order to be able to answer question from any language and from any input type, such as pdf, html, docx, images, videos, audio, etc.
 
 ## Installation
 
