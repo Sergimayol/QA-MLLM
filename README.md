@@ -52,7 +52,8 @@ conda activate qa-mlm
 - [ ] Allow to use images as context input
 - [ ] Allow to use videos as context input
 - [ ] Allow to use audio as context input
-- [ ] Allow to use other languages as context input
+- [x] Allow to use other languages as context input
+- [ ] Add translation option for context input
 - [x] Create CLI application
 - [x] Create GUI application
 - [ ] Allow to specify the model to use
