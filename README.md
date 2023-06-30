@@ -24,13 +24,15 @@ To use the application, you have two options:
 ### CLI application
 
 ```bash
-qa-mlm --help
+python qa_mllm.py --help
 ```
 
 ### GUI application
 
 ```bash
-qa-mlm-gui --help
+streamlit run app.py
+# or
+python streamlit run app.py
 ```
 
 ## Development
