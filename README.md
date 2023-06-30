@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./docs/assets/coding.svg" height="350" width="1447">
+<img src="./docs/assets/coding.svg" height="300" width="1447">
 
 # QA-MLLM (Question Answering - Multiple Large Language Models)
 
